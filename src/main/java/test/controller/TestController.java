@@ -14,8 +14,9 @@ public class TestController extends HttpServlet {
 	public static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		var xxx = req.getParameter("xxx");
-		req.setAttribute("nickname", xxx);
+		var xxx = req.getParameter("path"); //取得xxx(path)的參數
+		System.out.println();
+		req.setAttribute("nickname", xxx);  //取得參數後將參數丟到nickname屬性上
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 	
